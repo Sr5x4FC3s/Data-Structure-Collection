@@ -17,8 +17,10 @@ const trie = class Trie {
     this.root = new trieNode(root_value);
   }
 
+
   /** 
    * @param { String } word - word that should be inserted into the Trie
+   * @return { TrieNode }
    */
 
   insert(word) {
@@ -38,7 +40,11 @@ const trie = class Trie {
     return this;
   }
 
-  // search method
+
+  /**
+   * @param { String } word 
+   * @return {TrieNode}
+   */
   search(word) {
     let current_Node = this.root;
 
@@ -56,12 +62,13 @@ const trie = class Trie {
     return current_Node;
   }
 
-  // delete method
+
+  /**
+   * @param { String } word
+   * @return { TrieNode }  
+   */
+
   delete(word) {
-    // call the search method to get the end of the node
-    // check for children - if node has no children, delete it - else if it has children, change the isCompleted to false to signify that it is no longer the end of a complere word 
-    // keep repeating the process until we find children
-    
     // inner recursive function 
     const deleteFromBottomToTop = (currentNode, index = 0) => {
       // return if character index counter is equal or exceeding word.length - 1;
@@ -91,7 +98,7 @@ const trie = class Trie {
       currentNode.delete(character);
     };
 
-    // invoke recursive function and input the root node 
+    // invoke function set the arg to the root node 
     deleteFromBottomToTop(this.root);
 
     return this;
