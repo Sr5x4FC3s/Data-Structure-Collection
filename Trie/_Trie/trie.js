@@ -1,12 +1,4 @@
 const { trieNode } = require('./trieNode');
-/**
- * define trie data structure 
- * 
- * methods: 
- * - insert
- * - search
- * - delete
- */
 
 
 const root_value = '';

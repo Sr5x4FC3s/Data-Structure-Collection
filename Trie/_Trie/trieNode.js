@@ -1,11 +1,3 @@
-/**
- * define individual trie nodes
- * 
- * methods: 
- * - insert
- * - delete 
- */ 
-
 /** 
  * @class 
  * @constructor
